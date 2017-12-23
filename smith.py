@@ -65,6 +65,9 @@ class PolyReader:
 
                 line = fp.readline()
         
+        if len(pols) != nCol:
+            raise ValueError("O número de linhas e colunas deve ser igual")
+
         result = np.empty((len(pols), nCol), dtype=object)
         for i in xrange(0, len(pols)):
             for j in xrange(0, nCol):
